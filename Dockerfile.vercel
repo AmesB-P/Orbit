@@ -10,7 +10,7 @@ FROM base AS dependencies
 WORKDIR /app
 
 COPY package.json pnpm-lock.yaml ./
-RUN pnpm install --frozen-lockfile
+RUN pnpm install --frozen-lockfile --allow-build=unrs-resolver
 
 FROM base AS builder
 
